@@ -1,0 +1,26 @@
+/* src/components/Sports.css */
+.sports-list {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .sort-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .sort-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .sort-buttons button:hover {
+    background-color: #45a049;
+  }
+  

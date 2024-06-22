@@ -1,0 +1,39 @@
+/* src/components/SportCard.css */
+.sport-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+  }
+  
+  .sport-card h3 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  .sport-card p {
+    margin: 10px 0;
+  }
+  
+  .photo-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .photo {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .photo:hover {
+    transform: rotate(5deg);
+    transition: transform 0.3s;
+  }
+  

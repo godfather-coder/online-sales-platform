@@ -1,0 +1,34 @@
+.pool-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pool-detail h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .pool-detail h3,
+  .pool-detail p {
+    margin: 10px 0;
+  }
+  
+  .pool-images {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .pool-images img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
