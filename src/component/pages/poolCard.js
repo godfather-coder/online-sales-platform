@@ -8,11 +8,14 @@ const FCard = ({ pool ,satc}) => {
   const navigate = useNavigate();
   const handleAddToCart = async () => {
     await addCartItem(pool,1);
+    navigate('/pool')
   };
-
+  const handleClick = () => {
+    navigate(`/pool/${pool.id}`);
+  };
   return (
     <div className="card">
-      <div className="cardivhor">
+      <div className="cardivhor" onClick={handleClick}>
         <h3>Price: {pool.price}</h3>
         <p>Description: {pool.description}</p>
         <p>Place: {pool.location}</p>

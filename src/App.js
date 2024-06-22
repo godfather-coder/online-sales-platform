@@ -16,9 +16,34 @@ import ContactForm from './component/pages/ContactForm.jsx';
 import UploadSportComponent from './component/pages/upload/SportComponent.jsx';
 import FitnessForm from './component/pages/upload/FitnessForm.jsx';
 import Cart from './Cart/Cart.jsx';
+import { auth, db } from "./component/firebase.js";
+import { doc, getDoc } from "firebase/firestore";
+import { useContext, useEffect } from 'react';
+import { DataContext } from './context/DataContext.js';
+import Cookies from "js-cookie";
+import FitnessDetail from './component/pages/fitnessDetails.js';
 
 function App() {
-
+  const {setData} = useContext(DataContext)
+  const fetchUserData = async () => {
+    auth.onAuthStateChanged(async (user) => {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            setUserDetails(docSnap.data());
+            Cookies.set('myKey', user.uid)
+            setData(true)
+        } else {
+            console.log("User is not logged in");
+        }
+    });
+};
+useEffect(() => {
+    if(Cookies.get('myKey')){
+      setData(true)
+    }
+    fetchUserData();
+}, []);
   return (
     <Router>
       <div style={{height:'100%'}}>
@@ -26,6 +51,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/pool/:id" element={<PoolDetail />} />
+          <Route path="/fitnesses/:id" element={<FitnessDetail />} />
           <Route path='/pools' element={<Pools />} />
           <Route path='/sports' element={<Sports />} />
           <Route path='/fitness' element={<Fitness />} />

@@ -30,7 +30,7 @@ function Home() {
           </Link>
         </div>
         <div className="service">
-          <Link to="/sport-complexes">
+          <Link to="/sports">
             <img src={Sport} alt="Sport Complexes" />
             <div className="service-info">
               <h2>Sport Complexes</h2>

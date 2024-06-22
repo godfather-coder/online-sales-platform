@@ -61,7 +61,7 @@ const Cart = () => {
           item.type_id === 1 ? (
             <FCard key={item.id} pool={item} onRemove={() => handleRemoveItem(item.id)} />
           ) : (
-            <SportCard key={item.id} complex={item} satc={false} onRemove={() => handleRemoveItem(item.id)} />
+            <SportCard key={item.id} complex={item}  onRemove={() => handleRemoveItem(item.id)} />
           )
         ))
       )}
